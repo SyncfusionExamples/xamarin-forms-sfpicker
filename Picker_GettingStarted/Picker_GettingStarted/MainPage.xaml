@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Picker_GettingStarted"
+             xmlns:syncfusion="clr-namespace:Syncfusion.SfPicker.XForms;assembly=Syncfusion.SfPicker.XForms"
+             x:Class="Picker_GettingStarted.MainPage">
+
+    <ContentPage.BindingContext>
+        <local:ColorInfo />
+    </ContentPage.BindingContext>
+    <Grid HorizontalOptions="Center" VerticalOptions="Center">
+        <StackLayout>
+            <Button Clicked="Button_Clicked"
+                            HeightRequest="40"
+                            Text="Open Picker"
+                            WidthRequest="200" />
+
+            <syncfusion:SfPicker x:Name="picker" 
+                             HeaderText="Select a Color"
+                             ItemsSource="{Binding Colors}"
+                             ColumnHeaderText="Color"
+                             ShowColumnHeader="True"
+                             HeightRequest="350"
+                             WidthRequest="300"
+                             PickerHeight="250"
+                             PickerWidth="280"
+                             ShowFooter="True"
+                             PickerMode="Dialog"/>
+        </StackLayout>
+    </Grid>
+</ContentPage>
